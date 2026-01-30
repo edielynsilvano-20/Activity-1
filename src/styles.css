@@ -1,0 +1,45 @@
+.intro-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ea66d4, #150d1d, #fb93d3);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.intro-box {
+  background: rgba(229, 162, 215, 0.85);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+  /* ↑ Existing styles intact */
+
+  /* 👇 make container wider */
+  width: 100%;
+  max-width: 1000px; /* increased from 700px to 1000px */
+}
+
+.intro-box h1 {
+  font-size: 32px;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.intro-box h1 span {
+  color: #1f2937;
+}
+
+.intro-box h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 16px;
+  color: #4b5563;
+  margin: 6px 0;
+}
