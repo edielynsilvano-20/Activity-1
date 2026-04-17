@@ -1,93 +1,164 @@
-<div style="
+<!-- ================= LOGIN PAGE ================= -->
+<div *ngIf="page === 'login'" style="
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #b9799c, #a070b3);
   font-family: Arial, sans-serif;
+">
+
+  <div style="
+    width: 350px;
+    padding: 30px;
+    border-radius: 16px;
+    background: rgb(197, 129, 157);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+  ">
+
+    <h2 style="color:#64045c;">Login</h2>
+
+    <input 
+      type="text" 
+      placeholder="Username"
+      [(ngModel)]="username"
+      style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;"
+    >
+
+    <input 
+      type="password" 
+      placeholder="Password"
+      [(ngModel)]="password"
+      style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;"
+    >
+
+    <button (click)="login()" style="
+        width:100%;
+        padding:10px;
+        border:none;
+        border-radius:8px;
+        background:#6a0dad;
+        color:white;
+        cursor:pointer;
+      ">
+      Login
+    </button>
+
+  </div>
+</div>
+
+
+<!-- ================= PROFILE PAGE ================= -->
+<div *ngIf="page === 'profile'" style="
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d77b9e, #dd9bdd);
+  font-family: Arial, sans-serif;
   padding: 20px;
 ">
 
   <div style="
-    width: 650px;
+    width: 750px;
     max-width: 95%;
-    padding: 40px;
-    border-radius: 16px;
-    background: rgb(197, 129, 157);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background: rgb(255, 121, 201);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
   ">
 
-    <h1 style="
+    <!-- HEADER -->
+    <div style="
+      background: linear-gradient(135deg, #98c6ea, #55b0cc);
+      padding: 30px;
+      color: white;
       text-align: center;
-      margin-bottom: 30px;
-      color: #64045c;
+      position: relative;
     ">
-      Profile Information
-    </h1>
+      <h1 style="margin:0;">Profile</h1>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <!-- LOGOUT BUTTON -->
+      <button (click)="logout()" style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        background: #ff4d6d;
+        color: white;
+        cursor: pointer;
+        font-size: 13px;
+      ">
+        Logout
+      </button>
+    </div>
 
-      <div>
-        <p><strong>Full Name:</strong><br> Edielyn Silvano</p>
+    <!-- BODY -->
+    <div style="padding: 30px;">
+
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      ">
+
+        <div>
+          <p><strong>Full Name:</strong><br> Edielyn Silvano</p>
+        </div>
+
+        <div>
+          <p><strong>Username:</strong><br> edielyn6505</p>
+        </div>
+
+        <div>
+          <p><strong>Email:</strong><br> edielynsilvano@gmail.com</p>
+        </div>
+
+        <div>
+          <p><strong>Phone:</strong><br> 0123456789</p>
+        </div>
+
+        <div>
+          <p><strong>Date of Birth:</strong><br> June 5, 2005</p>
+        </div>
+
+        <div>
+          <p><strong>Location:</strong><br> Brgy. Cabacungan Dulag, Leyte</p>
+        </div>
+
+        <div style="grid-column: span 2;">
+          <p><strong>About Me:</strong><br>
+          Passionate Frontend Developer specializing in Angular applications, UI/UX design, and responsive web development.
+          </p>
+        </div>
+
       </div>
 
-      <div>
-        <p><strong>Username:</strong><br> edielyn6505</p>
-      </div>
-
-      <div>
-        <p><strong>Email:</strong><br> edielynsilvano@gmail.com</p>
-      </div>
-
-      <div>
-        <p><strong>Phone:</strong><br> +1 234 567 890</p>
-      </div>
-
-      <div>
-        <p><strong>Date of Birth:</strong><br> June 5, 2005</p>
-      </div>
-
-      <div>
-        <p><strong>Location:</strong><br> Brgy. Cabacungan Dulag, Leyte</p>
-      </div>
-
-      <div style="grid-column: span 2;">
-        <p><strong>About Me:</strong><br>
-        Passionate Frontend Developer specializing in Angular applications, UI/UX design, and responsive web development. I enjoy building clean and user-friendly interfaces.
-        </p>
-      </div>
-
-      <div style="grid-column: span 2; text-align: center; margin-top: 15px;">
-        <button 
-          style="
-            padding: 12px 30px;
+      <!-- ACTION BUTTONS -->
+      <div style="text-align:center; margin-top: 25px;">
+        <button style="
+            padding: 12px 25px;
             border: none;
             border-radius: 8px;
             background-color: #6a0dad;
             color: white;
             cursor: pointer;
-            font-size: 15px;
             margin-right: 10px;
-          "
-          onmouseover="this.style.backgroundColor='#4b0082'"
-          onmouseout="this.style.backgroundColor='#6a0dad'"
-        >
+          ">
           Edit Profile
         </button>
 
-        <button 
-          style="
-            padding: 12px 30px;
+        <button style="
+            padding: 12px 25px;
             border: none;
             border-radius: 8px;
             background-color: #9b59b6;
             color: white;
             cursor: pointer;
-            font-size: 15px;
-          "
-          onmouseover="this.style.backgroundColor='#7d3c98'"
-          onmouseout="this.style.backgroundColor='#9b59b6'"
-        >
+          ">
           Contact
         </button>
       </div>
@@ -95,5 +166,4 @@
     </div>
 
   </div>
-
 </div>
