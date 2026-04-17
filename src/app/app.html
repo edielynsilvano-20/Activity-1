@@ -1,56 +1,4 @@
-<!-- ================= LOGIN PAGE ================= -->
-<div *ngIf="page === 'login'" style="
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #b9799c, #a070b3);
-  font-family: Arial, sans-serif;
-">
-
-  <div style="
-    width: 350px;
-    padding: 30px;
-    border-radius: 16px;
-    background: rgb(197, 129, 157);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    text-align: center;
-  ">
-
-    <h2 style="color:#64045c;">Login</h2>
-
-    <input 
-      type="text" 
-      placeholder="Username"
-      [(ngModel)]="username"
-      style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;"
-    >
-
-    <input 
-      type="password" 
-      placeholder="Password"
-      [(ngModel)]="password"
-      style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;"
-    >
-
-    <button (click)="login()" style="
-        width:100%;
-        padding:10px;
-        border:none;
-        border-radius:8px;
-        background:#6a0dad;
-        color:white;
-        cursor:pointer;
-      ">
-      Login
-    </button>
-
-  </div>
-</div>
-
-
-<!-- ================= PROFILE PAGE ================= -->
-<div *ngIf="page === 'profile'" style="
+<div style="
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -78,22 +26,6 @@
       position: relative;
     ">
       <h1 style="margin:0;">Profile</h1>
-
-      <!-- LOGOUT BUTTON -->
-      <button (click)="logout()" style="
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 8px;
-        background: #ff4d6d;
-        color: white;
-        cursor: pointer;
-        font-size: 13px;
-      ">
-        Logout
-      </button>
     </div>
 
     <!-- BODY -->
@@ -166,4 +98,5 @@
     </div>
 
   </div>
+
 </div>
